@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Prem Kumar &amp; Haripriya — Wedding Invitation</title>
+<meta name="description" content="With the blessings of Lord Ganesha, the Singamaneni and Devanaboina families cordially invite you to the wedding of Prem Kumar and Haripriya, 4th July 2026, Palukuru.">
+<meta property="og:title" content="Prem Kumar & Haripriya — Wedding Invitation">
+<meta property="og:description" content="04 • 07 • 2026 — Sri Veerabrahmendra Swamy Vari Devasthanam, Palukuru">
+<meta name="theme-color" content="#5C0A1E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Tiro+Telugu:ital@0;1&family=Mallanna&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate-on-scroll/2.3.4/aos.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ AMBIENT CANVAS LAYERS ============ -->
+<canvas id="petal-canvas" aria-hidden="true"></canvas>
+<div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+
+<!-- ============ AUDIO CONTROL ============ -->
+<!-- Add your music file: place an MP3 named "music.mp3" in this same folder
+     (classical Telugu instrumental / nadaswaram / veena works beautifully here),
+     and it will play automatically. See README.txt for free, license-safe sources. -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" class="music-toggle" aria-label="Toggle background music">
+  <svg class="music-icon" viewBox="0 0 24 24" fill="none"><path d="M9 18V5l11-2v13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="16" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+  <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+</button>
+
+<!-- ============ TEMPLE DOOR LOADER / GATE ============ -->
+<div id="templeGate" class="temple-gate">
+  <div class="gate-inner">
+    <div class="gate-arch">
+      <svg viewBox="0 0 400 520" class="gopuram-svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#F6E2A0"/>
+            <stop offset="50%" stop-color="#C9952C"/>
+            <stop offset="100%" stop-color="#8B5A2B"/>
+          </linearGradient>
+        </defs>
+        <path d="M200 10 L230 50 L170 50 Z" fill="url(#goldGrad)"/>
+        <circle cx="200" cy="35" r="9" fill="url(#goldGrad)"/>
+        <path d="M120 50 Q200 0 280 50 L280 90 L120 90 Z" fill="url(#goldGrad)"/>
+        <rect x="110" y="90" width="180" height="14" fill="url(#goldGrad)"/>
+        <path d="M130 104 Q200 70 270 104 L270 130 L130 130 Z" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+      </svg>
+    </div>
+    <p class="gate-label">తెరుచుకుంటున్నవి దివ్య ద్వారాలు</p>
+    <div class="gate-doors">
+      <div class="door door-left">
+        <div class="door-carving"></div>
+        <div class="door-handle"></div>
+      </div>
+      <div class="door door-right">
+        <div class="door-carving"></div>
+        <div class="door-handle"></div>
+      </div>
+    </div>
+    <button id="enterBtn" class="enter-btn">
+      <span>తెరవండి</span><small>Open the Invitation</small>
+    </button>
+  </div>
+</div>
+
+<!-- ============ MAIN SITE ============ -->
+<div id="mainSite" class="main-site">
+
+  <!-- NAV DOTS -->
+  <nav class="side-nav" aria-label="Section navigation">
+    <a href="#hero" class="nav-dot active" data-label="Welcome"></a>
+    <a href="#families" class="nav-dot" data-label="Families"></a>
+    <a href="#bride" class="nav-dot" data-label="Bride"></a>
+    <a href="#groom" class="nav-dot" data-label="Groom"></a>
+    <a href="#journey" class="nav-dot" data-label="Journey"></a>
+    <a href="#events" class="nav-dot" data-label="Muhurtham"></a>
+    <a href="#venue" class="nav-dot" data-label="Venue"></a>
+    <a href="#gallery" class="nav-dot" data-label="Gallery"></a>
+    <a href="#rsvp" class="nav-dot" data-label="RSVP"></a>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="section hero-section">
+    <div class="temple-frame top"></div>
+    <div class="hero-petals-overlay"></div>
+
+    <div class="hero-content">
+      <div class="ganesha-blessing" data-aos="fade-down" data-aos-duration="1200">
+        <svg viewBox="0 0 200 200" class="ganesha-svg" aria-label="Lord Ganesha blessing motif">
+          <circle cx="100" cy="100" r="92" fill="none" stroke="url(#ringGrad)" stroke-width="1.5" opacity="0.6"/>
+          <defs>
+            <radialGradient id="ringGrad"><stop offset="0%" stop-color="#F6E2A0"/><stop offset="100%" stop-color="#C9952C"/></radialGradient>
+          </defs>
+          <!-- simple stylised Ganesha silhouette -->
+          <g fill="#C9952C">
+            <ellipse cx="100" cy="118" rx="34" ry="30"/>
+            <circle cx="100" cy="78" r="26"/>
+            <path d="M88 88 Q80 120 95 132 Q88 122 90 100 Z"/>
+            <ellipse cx="78" cy="70" rx="13" ry="17" transform="rotate(-15 78 70)"/>
+            <ellipse cx="122" cy="70" rx="13" ry="17" transform="rotate(15 122 70)"/>
+            <circle cx="92" cy="80" r="3" fill="#5C0A1E"/>
+            <circle cx="108" cy="80" r="3" fill="#5C0A1E"/>
+            <path d="M70 130 Q100 150 130 130 L130 150 Q100 168 70 150 Z"/>
+          </g>
+        </svg>
+        <p class="blessing-script">శ్రీ గణేశాయ నమః</p>
+      </div>
+
+      <p class="eyebrow" data-aos="fade-up" data-aos-delay="200">శ్రీరస్తు శుభమస్తు అవిఘ్నమస్తు</p>
+
+      <h1 class="hero-names" data-aos="fade-up" data-aos-delay="350">
+        <span class="name groom-name">Prem Kumar</span>
+        <span class="ampersand">&amp;</span>
+        <span class="name bride-name">Haripriya</span>
+      </h1>
+
+      <div class="hero-divider" data-aos="zoom-in" data-aos-delay="500"><span></span><i>✦</i><span></span></div>
+
+      <p class="hero-message" data-aos="fade-up" data-aos-delay="600">
+        With the blessings of Lord Ganesha, our families cordially invite you<br>
+        to celebrate the sacred union of our beloved children
+      </p>
+
+      <p class="hero-date" data-aos="fade-up" data-aos-delay="750">04 <i>•</i> 07 <i>•</i> 2026 &nbsp;&nbsp;|&nbsp;&nbsp; Palukuru, Andhra Pradesh</p>
+
+      <!-- Mini countdown chip -->
+      <div class="hero-countdown" id="heroCountdown" data-aos="fade-up" data-aos-delay="900">
+        <div class="cd-chip"><span id="hc-days">00</span><small>Days</small></div>
+        <div class="cd-chip"><span id="hc-hours">00</span><small>Hrs</small></div>
+        <div class="cd-chip"><span id="hc-mins">00</span><small>Min</small></div>
+        <div class="cd-chip"><span id="hc-secs">00</span><small>Sec</small></div>
+      </div>
+
+      <a href="#families" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    </div>
+
+    <div class="diya-row" aria-hidden="true">
+      <div class="diya"><div class="flame"></div></div>
+      <div class="diya"><div class="flame"></div></div>
+      <div class="diya"><div class="flame"></div></div>
+      <div class="diya"><div class="flame"></div></div>
+      <div class="diya"><div class="flame"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ FAMILY INVITATION ============ -->
+  <section id="families" class="section families-section">
+    <div class="section-heading" data-aos="fade-up">
+      <p class="kicker">కుటుంబ ఆశీర్వచనం</p>
+      <h2>With Our Families' Blessings</h2>
+      <div class="motif-divider"><span></span><i>❖</i><span></span></div>
+    </div>
+
+    <div class="family-cards">
+      <article class="family-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="family-border-frame">
+          <p class="family-tag">వధువు కుటుంబం · Bride's Family</p>
+          <h3>Devanaboina Family</h3>
+          <p class="family-line">Chi. La. Sow. <strong>Haripriya</strong></p>
+          <p class="family-line">Daughter of</p>
+          <p class="family-parents">Sri Devanaboina Ramakrishna &amp; Smt. Lakshmi</p>
+        </div>
+      </article>
+
+      <div class="family-knot" data-aos="zoom-in" data-aos-delay="200" aria-hidden="true">
+        <svg viewBox="0 0 60 60"><path d="M30 5 C10 5 10 30 30 30 C50 30 50 55 30 55 M30 5 C50 5 50 30 30 30 C10 30 10 55 30 55" fill="none" stroke="#C9952C" stroke-width="2"/></svg>
+      </div>
+
+      <article class="family-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="family-border-frame">
+          <p class="family-tag">వరుడి కుటుంబం · Groom's Family</p>
+          <h3>Singamaneni Family</h3>
+          <p class="family-line">Chi. <strong>Prem Kumar</strong></p>
+          <p class="family-line">Younger Son of</p>
+          <p class="family-parents">Sri Singamaneni Brahmaiah &amp; Smt. Padma</p>
+          <p class="family-residence">Palukuru Village, Kandukuru Mandal, Prakasam District</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ BRIDE SECTION ============ -->
+  <section id="bride" class="section person-section bride-bg">
+    <div class="person-wrap reverse">
+      <div class="person-illustration" data-aos="fade-right">
+        <svg viewBox="0 0 320 460" class="bride-svg" aria-label="Illustration of bride in traditional Telugu attire">
+          <ellipse cx="160" cy="430" rx="120" ry="16" fill="#3a0612" opacity="0.3"/>
+          <path d="M90 460 C90 300 100 230 160 220 C220 230 230 300 230 460 Z" fill="#7A0E27"/>
+          <path d="M100 460 C100 320 108 250 160 240 C212 250 220 320 220 460 Z" fill="#9c1733"/>
+          <path d="M100 300 L220 300" stroke="#F0D078" stroke-width="6"/>
+          <path d="M95 380 L225 380" stroke="#F0D078" stroke-width="4" opacity="0.8"/>
+          <circle cx="160" cy="160" r="46" fill="#3a1208"/>
+          <circle cx="160" cy="165" r="40" fill="#5c2210"/>
+          <path d="M118 150 Q160 95 202 150 Q205 130 160 118 Q115 130 118 150 Z" fill="#1c0a05"/>
+          <circle cx="143" cy="168" r="3.5" fill="#1c0a05"/>
+          <circle cx="177" cy="168" r="3.5" fill="#1c0a05"/>
+          <path d="M148 188 Q160 195 172 188" stroke="#7A0E27" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="160" cy="142" r="5" fill="#C9952C"/>
+          <path d="M120 200 Q160 215 200 200" stroke="#C9952C" stroke-width="5" fill="none"/>
+          <ellipse cx="160" cy="210" rx="14" ry="10" fill="#C9952C"/>
+          <g fill="#F6E2A0" opacity="0.95">
+            <circle cx="160" cy="112" r="4"/>
+            <circle cx="146" cy="116" r="3"/>
+            <circle cx="174" cy="116" r="3"/>
+          </g>
+          <path d="M108 230 Q160 250 212 230" stroke="#F0D078" stroke-width="3" fill="none" opacity="0.7"/>
+        </svg>
+        <div class="jasmine-string" aria-hidden="true"></div>
+      </div>
+      <div class="person-text" data-aos="fade-left">
+        <p class="kicker">వధువు · The Bride</p>
+        <h2 class="person-name">Haripriya</h2>
+        <p class="person-sub">Chi. La. Sow. Haripriya</p>
+        <p class="person-desc">Beloved daughter of Sri Devanaboina Ramakrishna &amp; Smt. Lakshmi — raised with grace, devotion, and quiet strength, she steps into this new chapter carrying her family's blessings and dreams.</p>
+        <div class="person-quote">"గృహమే స్వర్గం" — where she goes, home follows.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GROOM SECTION ============ -->
+  <section id="groom" class="section person-section groom-bg">
+    <div class="person-wrap">
+      <div class="person-illustration" data-aos="fade-left">
+        <svg viewBox="0 0 320 460" class="groom-svg" aria-label="Illustration of groom in traditional Telugu attire">
+          <ellipse cx="160" cy="430" rx="120" ry="16" fill="#3a0612" opacity="0.3"/>
+          <path d="M95 460 C95 310 110 245 160 235 C210 245 225 310 225 460 Z" fill="#FBF3E3"/>
+          <path d="M95 460 L225 460 L225 410 L95 410 Z" fill="#C9952C" opacity="0.85"/>
+          <rect x="148" y="235" width="24" height="120" fill="#7A0E27" opacity="0.5"/>
+          <circle cx="160" cy="160" r="44" fill="#3a1208"/>
+          <circle cx="160" cy="166" r="38" fill="#5c2210"/>
+          <path d="M122 150 Q160 105 198 150 L198 138 Q160 118 122 138 Z" fill="#1c0a05"/>
+          <circle cx="144" cy="168" r="3.4" fill="#1c0a05"/>
+          <circle cx="176" cy="168" r="3.4" fill="#1c0a05"/>
+          <path d="M150 188 Q160 193 170 188" stroke="#7A0E27" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M115 130 Q160 92 205 130 Q210 110 160 100 Q110 110 115 130 Z" fill="#FBF3E3"/>
+          <circle cx="160" cy="103" r="6" fill="#C9952C"/>
+          <path d="M140 210 L180 210 L176 230 L144 230 Z" fill="#C9952C"/>
+        </svg>
+      </div>
+      <div class="person-text" data-aos="fade-right">
+        <p class="kicker">వరుడు · The Groom</p>
+        <h2 class="person-name">Prem Kumar</h2>
+        <p class="person-sub">Chi. Prem Kumar</p>
+        <p class="person-desc">Younger son of Sri Singamaneni Brahmaiah &amp; Smt. Padma of Palukuru Village, Kandukuru Mandal — a man of steady devotion and warm heart, ready to begin this sacred journey with unwavering commitment.</p>
+        <div class="person-quote">"ధర్మమే జీవితం" — duty and love, woven as one.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY / UNION TIMELINE ============ -->
+  <section id="journey" class="section journey-section">
+    <div class="section-heading" data-aos="fade-up">
+      <p class="kicker">అనంత బంధం</p>
+      <h2>The Union — A Forever Journey</h2>
+      <div class="motif-divider"><span></span><i>❖</i><span></span></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line" aria-hidden="true"></div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <p class="tl-label">Two Families, Blessed</p>
+          <p class="tl-text">Two families, rooted in tradition and faith, came together with the blessings of elders to begin this sacred alliance.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <p class="tl-label">Pellichoopulu &amp; Promise</p>
+          <p class="tl-text">In the presence of both families, Prem Kumar and Haripriya were chosen for one another — a promise sealed with joy.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <p class="tl-label">Rituals Begin</p>
+          <p class="tl-text">From Pellikuthuru to Snathakam, every ritual now carries them closer to the sacred Muhurtham at Palukuru.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="timeline-dot final"></div>
+        <div class="timeline-card highlight">
+          <p class="tl-label">Sumuhurtham · 04 July 2026</p>
+          <p class="tl-text">Under Sathabhisha Nakshatram and Kumbha Lagnam, two souls become one — forever bound in marriage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENTS / MUHURTHAM CARDS ============ -->
+  <section id="events" class="section events-section">
+    <div class="section-heading" data-aos="fade-up">
+      <p class="kicker">వేడుకల వివరాలు</p>
+      <h2>Sumuhurtham &amp; Ceremonies</h2>
+      <div class="motif-divider"><span></span><i>❖</i><span></span></div>
+    </div>
+
+    <div class="event-grid">
+
+      <article class="event-card hero-event" data-aos="zoom-in">
+        <div class="event-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 4 L30 16 L18 16 Z" fill="#C9952C"/><rect x="14" y="16" width="20" height="24" rx="2" fill="none" stroke="#C9952C" stroke-width="2"/><path d="M14 24 H34" stroke="#C9952C" stroke-width="1.5"/></svg>
+        </div>
+        <p class="event-tag">Wedding Muhurtham</p>
+        <h3>Sumuhurtham</h3>
+        <p class="event-detail"><strong>Date:</strong> Saturday, 04 July 2026</p>
+        <p class="event-detail"><strong>Time:</strong> 10:34 PM</p>
+        <p class="event-detail"><strong>Nakshatram:</strong> Sathabhisha Nakshatra Yukta</p>
+        <p class="event-detail"><strong>Lagnam:</strong> Kumbha Lagnam</p>
+        <p class="event-detail"><strong>Venue:</strong> Sri Veerabrahmendra Swamy Vari Devasthanam, Palukuru</p>
+      </article>
+
+      <article class="event-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="event-icon">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="#C9952C" stroke-width="2"/><path d="M24 14 V24 L31 29" stroke="#C9952C" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <p class="event-tag">Same Day</p>
+        <h3>Lunch Reception</h3>
+        <p class="event-detail"><strong>Date:</strong> 04 July 2026</p>
+        <p class="event-detail"><strong>Time:</strong> 12:00 Noon</p>
+        <p class="event-detail"><strong>Venue:</strong> At Our Residence, Bhagya Nagar 3rd Line, Ongole</p>
+      </article>
+
+      <article class="event-card placeholder-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="event-icon">
+          <svg viewBox="0 0 48 48"><path d="M10 18 L24 8 L38 18 V38 H10 Z" fill="none" stroke="#C9952C" stroke-width="2"/></svg>
+        </div>
+        <p class="event-tag">Details Awaited</p>
+        <h3>Engagement</h3>
+        <p class="event-detail muted">To be announced by the families</p>
+      </article>
+
+      <article class="event-card placeholder-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="event-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 6 C30 6 34 14 34 22 C34 32 24 42 24 42 C24 42 14 32 14 22 C14 14 18 6 24 6 Z" fill="none" stroke="#C9952C" stroke-width="2"/></svg>
+        </div>
+        <p class="event-tag">Details Awaited</p>
+        <h3>Pellikuthuru</h3>
+        <p class="event-detail muted">To be announced by the families</p>
+      </article>
+
+      <article class="event-card placeholder-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="event-icon">
+          <svg viewBox="0 0 48 48"><path d="M24 8 L40 16 L24 24 L8 16 Z" fill="none" stroke="#C9952C" stroke-width="2"/><path d="M16 20 V32 L24 36 L32 32 V20" stroke="#C9952C" stroke-width="2" fill="none"/></svg>
+        </div>
+        <p class="event-tag">Details Awaited</p>
+        <h3>Snathakam</h3>
+        <p class="event-detail muted">To be announced by the families</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ VENUE ============ -->
+  <section id="venue" class="section venue-section">
+    <div class="section-heading" data-aos="fade-up">
+      <p class="kicker">పుణ్యక్షేత్రం</p>
+      <h2>The Wedding Venue</h2>
+      <div class="motif-divider"><span></span><i>❖</i><span></span></div>
+    </div>
+
+    <div class="venue-grid">
+      <div class="venue-info" data-aos="fade-right">
+        <h3>Sri Veerabrahmendra Swamy Vari Devasthanam</h3>
+        <p class="venue-address">Palukuru Village, Kandukuru Mandal,<br>Prakasam District, Andhra Pradesh</p>
+        <a class="nav-btn" href="https://www.google.com/maps/search/?api=1&query=Sri+Veerabrahmendra+Swamy+Vari+Devasthanam+Palukuru+Kandukuru+Prakasam" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          Navigate with Google Maps
+        </a>
+
+        <div class="venue-photos">
+          <div class="venue-photo-placeholder"><span>Temple Photo</span></div>
+          <div class="venue-photo-placeholder"><span>Mandapam Photo</span></div>
+        </div>
+      </div>
+
+      <div class="venue-map" data-aos="fade-left">
+        <iframe
+          title="Map to Sri Veerabrahmendra Swamy Vari Devasthanam, Palukuru"
+          src="https://maps.google.com/maps?q=Palukuru%2C%20Kandukuru%2C%20Prakasam%2C%20Andhra%20Pradesh&t=&z=12&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="venue-info reception-venue" data-aos="fade-up">
+      <h3>Lunch Reception — At Our Residence</h3>
+      <p class="venue-address">Bhagya Nagar 3rd Line, Ongole, Andhra Pradesh</p>
+      <a class="nav-btn ghost" href="https://www.google.com/maps/search/?api=1&query=Bhagya+Nagar+3rd+Line+Ongole+Andhra+Pradesh" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+        Navigate to Reception
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="gallery" class="section gallery-section">
+    <div class="section-heading" data-aos="fade-up">
+      <p class="kicker">జ్ఞాపకాలు</p>
+      <h2>Gallery</h2>
+      <div class="motif-divider"><span></span><i>❖</i><span></span></div>
+      <p class="gallery-note">Real photographs will be added here soon — enjoy these placeholders for now.</p>
+    </div>
+
+    <div class="masonry-gallery" id="masonryGallery">
+      <!-- JS will populate placeholder tiles -->
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery image">&times;</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <!-- ============ FULL COUNTDOWN ============ -->
+  <section id="countdown" class="section countdown-section">
+    <div class="section-heading" data-aos="fade-up">
+      <p class="kicker">ముహూర్తం సమీపిస్తోంది</p>
+      <h2>Counting Down to the Sumuhurtham</h2>
+      <div class="motif-divider"><span></span><i>❖</i><span></span></div>
+    </div>
+
+    <div class="big-countdown" data-aos="zoom-in">
+      <div class="big-cd-unit"><span id="cd-days">00</span><small>Days</small></div>
+      <div class="big-cd-sep">:</div>
+      <div class="big-cd-unit"><span id="cd-hours">00</span><small>Hours</small></div>
+      <div class="big-cd-sep">:</div>
+      <div class="big-cd-unit"><span id="cd-mins">00</span><small>Minutes</small></div>
+      <div class="big-cd-sep">:</div>
+      <div class="big-cd-unit"><span id="cd-secs">00</span><small>Seconds</small></div>
+    </div>
+
+    <p class="countdown-sub">04 July 2026 · 10:34 PM · Kumbha Lagnam · Sathabhisha Nakshatram</p>
+
+    <div id="fireworksCanvas-wrap"><canvas id="fireworksCanvas"></canvas></div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section id="rsvp" class="section rsvp-section">
+    <div class="section-heading" data-aos="fade-up">
+      <p class="kicker">హాజరు తెలియజేయండి</p>
+      <h2>RSVP</h2>
+      <div class="motif-divider"><span></span><i>❖</i><span></span></div>
+      <p class="rsvp-note">Kindly let us know if you'll be gracing this sacred occasion with your presence.</p>
+    </div>
+
+    <form id="rsvpForm" class="rsvp-form" data-aos="fade-up" autocomplete="off">
+      <div class="form-row">
+        <label for="guestName">Guest Name</label>
+        <input type="text" id="guestName" name="guestName" placeholder="Your full name" required>
+      </div>
+      <div class="form-row">
+        <label for="guestMobile">Mobile Number</label>
+        <input type="tel" id="guestMobile" name="guestMobile" placeholder="10-digit mobile number" pattern="[0-9+\-\s]{7,15}" required>
+      </div>
+      <div class="form-row">
+        <label for="guestCount">Number of Guests</label>
+        <input type="number" id="guestCount" name="guestCount" min="1" max="20" value="1" required>
+      </div>
+      <div class="form-row attend-row">
+        <label>Will You Attend?</label>
+        <div class="attend-toggle">
+          <button type="button" class="attend-btn active" data-value="yes">✓ Attending</button>
+          <button type="button" class="attend-btn" data-value="no">✕ Not Attending</button>
+        </div>
+        <input type="hidden" id="attendStatus" name="attendStatus" value="yes">
+      </div>
+      <button type="submit" class="submit-btn">
+        <span>Send Blessings &amp; RSVP</span>
+      </button>
+    </form>
+
+    <div class="rsvp-success" id="rsvpSuccess">
+      <svg viewBox="0 0 60 60" width="56" height="56"><circle cx="30" cy="30" r="28" fill="none" stroke="#C9952C" stroke-width="2"/><path d="M18 31 L27 40 L43 22" fill="none" stroke="#C9952C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Thank You!</h3>
+      <p>Your response has been recorded with gratitude. We look forward to celebrating with you.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-motif" aria-hidden="true">
+      <svg viewBox="0 0 400 60"><path d="M0 30 Q100 0 200 30 Q300 60 400 30" fill="none" stroke="#C9952C" stroke-width="1.5" opacity="0.6"/></svg>
+    </div>
+
+    <p class="footer-script">మీ రాక మాకు ఆనందం</p>
+    <p class="footer-sub">We eagerly await your presence and blessings.</p>
+
+    <div class="footer-names">Prem Kumar &amp; Haripriya</div>
+    <p class="footer-date">04 • 07 • 2026 &nbsp;|&nbsp; Palukuru, Prakasam District, Andhra Pradesh</p>
+
+    <div class="footer-actions">
+      <a id="whatsappShare" class="whatsapp-btn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.2-.6.9-.8 1.1-.1.2-.3.2-.5.1-1.4-.6-2.5-1.4-3.4-2.8-.1-.2-.1-.4.1-.6.2-.2.4-.5.6-.7.2-.2.2-.4.1-.6-.1-.3-.6-1.5-.9-2-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.1 1.7 2.6 4.1 3.6 2.1.8 2.1.6 2.5.6.4 0 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1 1 1-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+        Share on WhatsApp
+      </a>
+    </div>
+
+    <div class="footer-contacts">
+      <p>Bride's Family: Sri Devanaboina Ramakrishna <span class="tbd">(phone to be added)</span></p>
+      <p>Groom's Family: <span class="tbd">(phone to be added)</span></p>
+    </div>
+
+    <p class="footer-copy">Crafted with devotion for the Singamaneni &amp; Devanaboina families · 2026</p>
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animate-on-scroll/2.3.4/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
